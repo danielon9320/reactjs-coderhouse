@@ -1,6 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./NavBar.css";
+import CartWidget from "../CartWidget/CartWidget";
 
 function NavBar() {
   return (
@@ -29,7 +30,8 @@ function NavBar() {
       </ul>
     </div>
     <div>
-      <button type="button" class="btn btn-primary">Suscribite</button>
+     
+      <CartWidget></CartWidget>
     </div>
   </div>
 </nav>
