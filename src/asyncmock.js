@@ -1,23 +1,64 @@
 const products = [
-  { 
-      id: 1, 
-      name: 'iphone 12', 
-      price: 1000, 
-      category: 'celular', 
-      img:'https://www.apple.com/newsroom/images/product/iphone/standard/Apple_announce-iphone12pro_10132020.jpg.og.jpg?202108061040', 
-      stock: 25, 
-      description:'Descripcion de Iphone 12'
+  {
+    id: 1,
+    name: "The Beatles",
+    price: 1000,
+    category: "Revolver",
+    img: "https://m.media-amazon.com/images/I/A1ZeriZs9BL._SL1500_.jpg",
+    stock: 25,
+    description: "Descripcion de Album revolver",
   },
-  { id: 2, name: 'samsung s21', price: 800, category: 'celular', img:'https://cdn.pocket-lint.com/r/s/1200x630/assets/images/155378-phones-review-hands-on-samsung-galaxy-s21-ultra-image1-luae09ici4.JPG', stock: 16, description:'Descripcion de Samsung s21'},
-  { id: 3, name: 'Ipad 8va generacion', price: 1200, category: 'tablet', img:'https://medias.musimundo.com/medias/00406046-143516-143516-01-143516-01.jpg-size515?context=bWFzdGVyfGltYWdlc3w1MjI1MnxpbWFnZS9qcGVnfGhjMC9oYWMvMTAyODM0OTc0NTU2NDYvMDA0MDYwNDYtMTQzNTE2LTE0MzUxNl8wMS0xNDM1MTZfMDEuanBnX3NpemU1MTV8MzA0NmMzNGFhZjUwMDY2YjY5MjU0MjlkMGJlYWMxODAxZjE5ODJhZmJlOTczZThmZjE2NTQxMjU5NjE2OTA4Yw', stock: 10, description:'Descripcion de Ipad'}
-]
+  {
+    id: 2,
+    name: "Pink Floyd",
+    price: 800,
+    category: "The Wall",
+    img: "https://i0.wp.com/www.scienceofnoise.net/wp-content/uploads/2019/12/pink-floyd-the-wall-.jpg",
+    stock: 16,
+    description: "Descripcion de Album The Wall",
+  },
+  {
+    id: 3,
+    name: "Pescado Rabioso",
+    price: 1200,
+    category: "Artaud",
+    img: "https://cdn-d15c.kxcdn.com/fotos/discos/000/001/074/original/foto.jpg",
+    stock: 10,
+    description: "Descripcion de Ipad",
+  },
+  {
+    id: 4,
+    name: "Ipad 8va generacion",
+    price: 1200,
+    category: "tablet",
+    img: "https://cdn-d15c.kxcdn.com/fotos/discos/000/001/074/original/foto.jpg",
+    stock: 10,
+    description: "Descripcion de Ipad",
+  },
+  {
+    id: 5,
+    name: "Ipad 8va generacion",
+    price: 1200,
+    category: "tablet",
+    img: "https://cdn-d15c.kxcdn.com/fotos/discos/000/001/074/original/foto.jpg",
+    stock: 10,
+    description: "Descripcion de Ipad",
+  },
+  {
+    id: 6,
+    name: "Ipad 8va generacion",
+    price: 1200,
+    category: "tablet",
+    img: "https://indierocks.b-cdn.net/wp-content/uploads/2021/09/Blood-Sugar-Sex-Magik_RHCP.jpg",
+    stock: 10,
+    description: "Descripcion de Ipad",
+  },
+];
 
 export const getProducts = () => {
   return new Promise((resolve, reject) => {
-      setTimeout(() => {
-          resolve(products)
-      }, 2000)
-  })
-}
-
-
+    setTimeout(() => {
+      resolve(products);
+    }, 2000);
+  });
+};

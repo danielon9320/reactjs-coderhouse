@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <NavBar/>
-      <ItemListContainer greeting={"Hola"}/>
+      <ItemListContainer greeting={"Bienvenidos a Vynil Store"} style={{textAlign: "center"}}/>
       {/* <ItemCount stock={30} initial={1} onAdd={onAdd}/> */}
     </div>
   );
