@@ -62,7 +62,7 @@ const ItemDetail = (prod) => {
               </div>
               <div className="form-group row">
                 <div className="col-sm-9 col-md-9">
-                  <button className="btn btn-primary">Comprar ahora!</button>
+                  <button className="btn btn-primary">Comprar</button>
                 </div>
               </div>
             </div>
