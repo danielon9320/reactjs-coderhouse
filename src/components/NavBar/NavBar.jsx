@@ -1,6 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./NavBar.css";
+import { Link } from "react-router-dom"
 import CartWidget from "../CartWidget/CartWidget";
 
 function NavBar() {
@@ -8,8 +9,8 @@ function NavBar() {
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-  <img/>
-    <a class="navbar-brand m-1" href="#">Vynil Store</a>
+  
+    <Link class="navbar-brand m-1" to="/">Vynil Store</Link>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

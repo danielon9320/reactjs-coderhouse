@@ -54,7 +54,7 @@ const ItemDetail = (prod) => {
 
               <div className="form-group row">
                 <label className="col-sm-3 col-md-3 form-control-label">
-                  Categoria:
+                  Album:
                 </label>
                 <div className="col-sm-9 col-md-9">
                   <p>{prod.category}</p>
