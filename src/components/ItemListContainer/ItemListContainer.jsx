@@ -15,9 +15,9 @@ const ItemListContainer = ({ greeting }) => {
 
   return (
     <>
-      <h1>{greeting}</h1>
+      <h1 className="text-center">{greeting}</h1>
       <div className="container">
-      <div className="row row-cols-2">
+      <div className="row">
 
       
         <ItemList items={products} />
