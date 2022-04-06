@@ -20,7 +20,7 @@ const ItemDetail = (prod) => {
             <h5>Stock: {prod.stock}</h5>
             <div className="d-flex justify-content-center">
               <button className="btn btn-danger bg-gradient me-3 mt-3">
-                Ir al carrito
+                Agregar al carrito
               </button>
             </div>
           </div>

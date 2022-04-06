@@ -57,22 +57,23 @@ const products = [
     category: "cd",
     img: "https://indierocks.b-cdn.net/wp-content/uploads/2021/09/Blood-Sugar-Sex-Magik_RHCP.jpg",
     stock: 10,
-    description: "Es el quinto álbum de estudio de la banda estadounidense de funk rock Red Hot Chili Peppers, lanzado el 24 de septiembre de 1991. Producido por Rick Rubin, fue la primera grabación de la banda lanzada por Warner Bros. Records. Los estilos musicales de Blood Sugar Sex Magik difieren notablemente de las técnicas empleadas en el álbum anterior de los Chili Peppers, Mother's Milk, y contiene un pequeño uso de riffs de guitarra de heavy metal. El disco incorporó insinuaciones sexuales, referencias a las drogas y a la muerte, y temas como la lujuria y la exuberancia. Blood Sugar Sex Magik vendió más de siete millones de copias solo en los Estados Unidos e introdujo a los Chili Peppers a la popularidad mainstream y la aclamación crítica. Blood Sugar Sex Magik produjo varios sencillos de la banda, entre los cuales se incluyen «Give It Away», «Under the Bridge», «Suck My Kiss», «Breaking the Girl» e «If You Have to Ask». La grabación también marcó la salida del guitarrista John Frusciante en 1992, durante el tour de la banda, hasta su regreso en 1998. Blood Sugar Sex Magik fue elogiado como el fundador del rock alternativo en los años 1990, y Steve Huey de Allmusic comentó que la grabación fue «...probablemente el mejor álbum que los Chili Peppers podrán hacer»."
+    description: "Es el quinto álbum de estudio de la banda estadounidense de funk rock Red Hot Chili Peppers, lanzado el 24 de septiembre de 1991. Producido por Rick Rubin, fue la primera grabación de la banda lanzada por Warner Bros. Records. Los estilos musicales de Blood Sugar Sex Magik difieren notablemente de las técnicas empleadas en el álbum anterior de los Chili Peppers, Mother's Milk, y contiene un pequeño uso de riffs de guitarra de heavy metal. El disco incorporó insinuaciones sexuales, referencias a las drogas y a la muerte, y temas como la lujuria y la exuberancia. Blood Sugar Sex Magik vendió más de siete millones de copias solo en los Estados Unidos e introdujo a los Chili Peppers a la popularidad mainstream y la aclamación crítica.   Blood Sugar Sex Magik produjo varios sencillos de la banda, entre los cuales se incluyen «Give It Away», «Under the Bridge», «Suck My Kiss», «Breaking the Girl» e «If You Have to Ask». La grabación también marcó la salida del guitarrista John Frusciante en 1992, durante el tour de la banda, hasta su regreso en 1998. Blood Sugar Sex Magik fue elogiado como el fundador del rock alternativo en los años 1990, y Steve Huey de Allmusic comentó que la grabación fue «...probablemente el mejor álbum que los Chili Peppers podrán hacer»."
   },
 ];
 
-export const getProducts = () => {
+export const getProducts = (category) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
+      category ? resolve(products.filter(prod => prod.category === category)) :
       resolve(products);
-    }, 2000);
+    }, 1000);
   });
 };
 
-export const getItemById = (id)=>{
+export const getProductById = (id)=>{
   return new Promise((resolve)=>{
       setTimeout(()=>{
           resolve(products.find(prod=>prod.id === parseInt(id)))
-      },2000)
+      },1000)
   })
 }
