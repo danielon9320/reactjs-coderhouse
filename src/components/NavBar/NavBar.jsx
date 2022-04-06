@@ -18,7 +18,8 @@ function NavBar() {
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item">
-          <a class="nav-link " href="#">Vinilos</a>
+        <Link class="nav-link " to="/categoria/vinilos">Vinilos</Link>
+          
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">CD's</a>
@@ -26,9 +27,7 @@ function NavBar() {
         <li class="nav-item">
           <a class="nav-link" href="#">Cassettes</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Otros</a>
-        </li>
+   
       </ul>
     </div>
     <div>

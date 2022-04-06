@@ -13,8 +13,9 @@ function App() {
       <div className="App">
         <NavBar />
         <Routes>
-          <Route path="/" element={<ItemListContainer greeting={"Bienvenidos a Vynil Store"} style={{ textAlign: "center" }}/>}/>
+          <Route path="/" element={<ItemListContainer greeting={"Bienvenidos a Vinyl Store"} style={{ textAlign: "center" }}/>}/>
           <Route path="/item/:id" element={<ItemDetailContainer/>}/>
+          <Route path="/categoria/:categoryId" element={<ItemListContainer/>}/>
           {/* <ItemCount stock={30} initial={1} onAdd={onAdd}/> */}
         </Routes>
         <Footer/>

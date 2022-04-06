@@ -9,7 +9,7 @@ const Item = ({ item }) => {
       </div>
       <div className="card-body text-center">
         <h4 className="card-title">{item.name}</h4>
-        <h5 className="card-text">{item.category}</h5>
+        <h5 className="card-text font-italic">{item.title}</h5>
         <h5 className="card-text">${item.price}</h5>
       </div>
       <div className="card-footer text-center">
