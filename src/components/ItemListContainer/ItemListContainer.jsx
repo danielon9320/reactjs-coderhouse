@@ -2,28 +2,44 @@ import React from "react";
 import { getProducts } from "../../asyncmock";
 import { useState, useEffect } from "react";
 import ItemList from "../ItemList/ItemList";
+import { useParams } from 'react-router-dom' 
 
-
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = ({greeting}) => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true)
+  const { categoryId } = useParams()
 
   useEffect(() => {
-    getProducts().then((response) => {
-      setProducts(response);
-    });
-  }, []);
+    setLoading(true)
+    
+    getProducts(categoryId).then(items => {
+        setProducts(items)
+    }).catch(err  => {
+        console.log(err)
+    }).finally(() => {
+        setLoading(false)
+    })
+
+    return (() => {
+        setProducts([])
+    })          
+}, [categoryId])
 
   return (
     <>
-      <h1 className="text-center m-4">{greeting}</h1>
+    {
+      loading ? 
+   
+      <h1 className="text-center m-4">Cargando....</h1> :
+      products.length ? 
       <div className="container">
       <div className="row">
 
-      
+      <h1 className="text-center m-4">{greeting}</h1>
         <ItemList items={products} />
         </div>
-      </div>
-      
+      </div> : <h1 className="text-center m-4">No se encontraron productos</h1>
+    }
     </>
   );
 };

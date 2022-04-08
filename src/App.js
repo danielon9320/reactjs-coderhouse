@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
@@ -8,19 +8,30 @@ import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
-    
-      <BrowserRouter>
+    <BrowserRouter>
       <div className="App">
         <NavBar />
         <Routes>
-          <Route path="/" element={<ItemListContainer greeting={"Bienvenidos a Vynil Store"} style={{ textAlign: "center" }}/>}/>
-          <Route path="/item/:id" element={<ItemDetailContainer/>}/>
-          {/* <ItemCount stock={30} initial={1} onAdd={onAdd}/> */}
+          <Route
+            path="/"
+            element={
+              <ItemListContainer
+                greeting={"Bienvenidos a Vinyl Store"}
+                style={{ textAlign: "center" }}
+              />
+            }
+          />
+          <Route
+            path="/category/:categoryId"
+            element={
+              <ItemListContainer greeting={"Bienvenidos a Vinyl Store"} />
+            }
+          />
+          <Route path="/item/:productId" element={<ItemDetailContainer />} />
         </Routes>
-        <Footer/>
-        </div>
-      </BrowserRouter>
-    
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 

@@ -1,29 +1,35 @@
-import React, {useState, useEffect} from 'react'
-import ItemDetail from '../ItemDetail/ItemDetail'
-import { getItemById } from '../../asyncmock'
-import {useParams} from 'react-router-dom'
+import React, { useState, useEffect } from "react";
+import ItemDetail from "../ItemDetail/ItemDetail";
+import { getProductById } from "../../asyncmock";
+import { useParams } from "react-router-dom";
+import "./ItemDetailContainer.css";
 
 const ItemDetailContainer = () => {
-    const [product, setProduct] = useState()
-    const [show,setShow] = useState(false)
+  const [product, setProduct] = useState();
+  const [loading, setLoading] = useState(true)
+  const { productId } = useParams();
 
-    const {id} = useParams()
+  useEffect(()=>{
+    setLoading(true)
 
-    useEffect(()=>{
-        getItemById(id).then(prod=>{
-            setProduct(prod)
-            setShow(true)
-        })
-    },[id,show])
+    getProductById(productId).then(prod => {
+      setProduct(prod)
+    }).catch(error => {
+      console.log(error)
+    }).finally(()=>{
+      setLoading(false)
+    })
+  },[productId])
+
+  if(loading){
+    return <h1 className="text-center m-4">Cargando...</h1>
+  }
+
   return (
     <div>
-        {show?<ItemDetail {...product}/>:<div className="d-flex justify-content-center mt-5">
-  <div className="spinner-border" style={{width:"4rem",height:"4rem"}} role="status">
-    
-  </div>
-</div>}
+      <ItemDetail {...product} />
     </div>
-  )
-}
+  );
+};
 
-export default ItemDetailContainer
+export default ItemDetailContainer;
