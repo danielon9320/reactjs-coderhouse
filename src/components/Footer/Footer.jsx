@@ -21,18 +21,18 @@ const Footer = () => {
               Nuestras <b>Redes:</b>
             </h3>
             <div className="redes__sociales">
-              <a href="https://www.facebook.com" target="_blank">
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
                 <FacebookIcon />
               </a>
-              <a href="https://www.instagram.com" target="_blank">
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
                 {" "}
                 <InstagramIcon />{" "}
               </a>
-              <a href="https://www.linkedin.com/in/daniel-rodolfo-lopez-sardi-846166122/" target="_blank">
+              <a href="https://www.linkedin.com/in/daniel-rodolfo-lopez-sardi-846166122/" target="_blank" rel="noopener noreferrer">
                 {" "}
                 <LinkedinIcon />{" "}
               </a>
-              <a href="https://github.com/danielon9320" target="_blank">
+              <a href="https://github.com/danielon9320" target="_blank" rel="noopener noreferrer">
                 {" "}
                 <GithubIcon />{" "}
               </a>

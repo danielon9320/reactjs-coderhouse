@@ -8,7 +8,7 @@ function NavBar() {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
+        <div className="container-fluid">
           <Link to="/">
             {" "}
             <img
@@ -19,11 +19,11 @@ function NavBar() {
             ></img>{" "}
           </Link>
 
-          <Link class="navbar-brand m-2" to="/">
+          <Link className="navbar-brand m-2" to="/">
             Vinyl Store
           </Link>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
@@ -31,22 +31,22 @@ function NavBar() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
-              <li class="nav-item">
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav mx-auto">
+              <li className="nav-item">
                 <Link to="/category/vinilo" class="nav-link ">
                   Vinilos
                 </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link to="/category/cd" class="nav-link">
                   CD's
                 </Link>
               </li>
-              <li class="nav-item">
-                <Link to="/category/cassette" class="nav-link">
+              <li className="nav-item">
+                <Link to="/category/cassette" className="nav-link">
                   Cassettes
                 </Link>
               </li>
