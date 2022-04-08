@@ -1,4 +1,5 @@
 import React from "react";
+import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 
 const ItemDetail = (prod) => {
@@ -19,6 +20,7 @@ const ItemDetail = (prod) => {
             <p className="text-right">{prod.description}</p>
             <h5>Stock: {prod.stock}</h5>
             <div className="d-flex justify-content-center">
+              <ItemCount></ItemCount>
               <button className="btn btn-danger bg-gradient me-3 mt-3">
                 Agregar al carrito
               </button>
