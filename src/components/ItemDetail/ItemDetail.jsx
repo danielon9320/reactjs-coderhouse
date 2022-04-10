@@ -1,8 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 
 const ItemDetail = (prod) => {
+  const [quantity,setQuantity] = useState(0)
+
+  const handleOnAdd=(count)=>{
+    console.log("agregue al carrito "+count)
+    setQuantity(count)
+  }
   return (
     <>
       <div key={prod.id} className="container mt-5">
@@ -20,10 +27,9 @@ const ItemDetail = (prod) => {
             <p className="text-right">{prod.description}</p>
             <h5>Stock: {prod.stock}</h5>
             <div className="d-flex justify-content-center">
-              <ItemCount></ItemCount>
-              <button className="btn btn-danger bg-gradient me-3 mt-3">
-                Agregar al carrito
-              </button>
+            {quantity===0? <ItemCount onAdd={handleOnAdd}/> : <Link to='/cart' className="btn btn-danger bg-gradient me-3 mt-3">Agregar al carrito</Link>}
+              
+              
             </div>
           </div>
         </div>
