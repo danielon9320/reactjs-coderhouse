@@ -1,14 +1,16 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Cart from "./components/cart/cart";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer.jsx";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
+import { CartContextProvider } from './context/CartContext'
+import Cart from "./components/Cart/Cart";
 
 function App() {
   return (
+    <CartContextProvider>
     <BrowserRouter>
       <div className="App">
         <NavBar />
@@ -34,6 +36,7 @@ function App() {
         <Footer />
       </div>
     </BrowserRouter>
+    </CartContextProvider>
   );
 }
 
