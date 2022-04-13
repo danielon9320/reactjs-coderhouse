@@ -8,6 +8,7 @@ const ItemDetail = (prod) => {
   const [quantity,setQuantity] = useState(0)
 
   const handleOnAdd=(count)=>{
+    alert("se agrego al carrito"+count);
     console.log("agregue al carrito "+count)
     setQuantity(count)
   }
@@ -28,7 +29,7 @@ const ItemDetail = (prod) => {
             <p className="text-right">{prod.description}</p>
             <h5>Stock: {prod.stock}</h5>
             <div className="d-flex justify-content-center">
-            {quantity===0? <ItemCount onAdd={handleOnAdd}/> : <Link to='/cart' className="btn btn-danger bg-gradient me-3 mt-3">Agregar al carrito</Link>}
+            {quantity===0? <ItemCount onAdd={handleOnAdd}/> : <Link to='/cart' className="btn btn-danger bg-gradient me-3 mt-3">Ir al carrito</Link>}
               
               
             </div>
