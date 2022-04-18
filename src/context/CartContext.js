@@ -1,60 +1,72 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import React from 'react'
+
 const Context = createContext()
 
 export const CartContextProvider = ({ children }) => {
-  
     const [cart, setCart] = useState([]);
 
-    const addItem = (product, cantidadAAgregar) => {
+    useEffect(() => {
+        console.log(cart);
+    }, [cart]);
 
-        const producto = isInCart(product);
-        if (producto) {
-            producto.quantity += cantidadAAgregar;
-            const cartFiltrado = cart.filter(elemento => elemento.id !== producto.id);
-            cartFiltrado.push(producto);
-            setCart(cartFiltrado);
-        } else {
-            setCart([...cart, { ...product, quantity: cantidadAAgregar }]);
-        }
+    const cartVerify = (id) => {
+        return cart.some((producto) => producto.id === id);
+    };
+    
+    const addToCart = (product, quantity) => {
+        cartVerify(product.id)
+            ? addQuantity (product, quantity)
+            : setCart([...cart, { ...product,  quantity }]);
+    };
 
-    }
-    //Función auxiliar que me determina si el producto está o no en el cart por ID
-    const isInCart = (producto) => {
-        return cart.find(elemento => elemento.id === producto.id);
-    }
+    const addQuantity = (product, quantity) => {
+        const newProducts = cart.map((prod) => {
+            if (prod.id === product.id) {
+                const newProduct = {
+                    ...prod,
+                    quantity: prod.quantity + quantity,
+                };
+                return newProduct;
+            } else {
+                return prod;
+            }
+        });
+        setCart(newProducts);
+    };
 
-    //limpia todo el carrito
-    const clearCart = () => {
-        setCart([]);
-    }
+    //Para eliminar un producto del carrito (Proximamente)
+    const removeItem = ( id ) =>{
+        const filterProducts = cart.filter((prod)=>prod.id !== id)
+        setCart(filterProducts)
+    } 
 
-    //elimina item del carrito
-    const removeItem = (producto) =>{
-        if(isInCart(producto))
-        {   // esto no funciona
-            //cart.delete(producto);
-        }
+    //Para vaciar el carrito (Proximamente)
+    const cleaningCart = ()=>{
+        setCart([])
     } 
 
     const getQuantity = () => {
         let count = 0
-        cart.forEach(prod => {
+        cart.forEach(prod  =>{
             count = count + prod.quantity
         })
-
         return count
     }
+
+    const getTotal = () => {
+        let total =0
+        cart.forEach(prod =>{
+            total = total + prod.price * prod.quantity
+        })
+        return total
+    }
+
     return (
-        <Context.Provider value={{ 
-            cart, 
-            addItem, removeItem, isInCart,
-            clearCart,
-            getQuantity
-        }}>
+        <Context.Provider value={{ cart, addToCart, removeItem, cleaningCart, getQuantity, getTotal }}>
             {children}
         </Context.Provider>
-    )
-}
-
+    );
+    
+};
 export default Context
