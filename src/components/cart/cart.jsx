@@ -16,7 +16,7 @@ const Cart = () => {
     
 }
   return (
-    <>
+    <div className='container'>
     <h1>Cart</h1>
     <div>
     {
@@ -30,7 +30,7 @@ const Cart = () => {
     </div>
     <button className="alternativeButton" onClick={()=> cleaningCart()}>Vaciar Carrito</button>
     <h2>Total: ${getTotal()}</h2>
-    </>
+    </div>
     
   )
 }
