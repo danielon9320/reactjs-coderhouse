@@ -1,0 +1,8 @@
+.itemCart {
+  display: flex;
+  margin-left: 10px;
+  width: 80%;
+  background-color: #f5e0fc ;
+  justify-content: space-around;
+  margin-bottom: 5px;
+}
