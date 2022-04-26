@@ -7,8 +7,7 @@ import "./ItemDetail.css";
 
 const ItemDetail = ({id, name, img, category, description, price, stock}) => {
   const [quantity,setQuantity] = useState(0)
-
-
+ 
   const { addToCart } = useContext(CartContext)
 
   const handleOnAdd=(count)=>{
@@ -33,11 +32,29 @@ const ItemDetail = ({id, name, img, category, description, price, stock}) => {
             <h4>${price}</h4>
             <p className="text-right">{description}</p>
             <h5>Stock: {stock}</h5>
+            
+
+
+            {!quantity 
+            ?
+            <ItemCount initial={1} max={stock} onAdd={handleOnAdd}/> 
+            : 
+
             <div className="d-flex justify-content-center">
-            {quantity===0? <ItemCount onAdd={handleOnAdd}/> : <Link to='/cart' className="btn btn-danger bg-gradient me-3 mt-3">Ir al carrito</Link>}
-              
-              
+            
+              <Link to={`/cart`}>
+                <button className="btn btn-success bg-gradient me-3 mt-3">Ir al carrito</button>
+              </Link>
+              <Link to={`/`}>
+                <button className="btn btn-success bg-gradient me-3 mt-3">Seguir Comprando</button>
+              </Link>
+
+            
             </div>
+            }
+              
+              
+            
           </div>
         </div>
       </div>
