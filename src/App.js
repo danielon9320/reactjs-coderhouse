@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import FormBuyer from "./components/FormBuyer/FormBuyer"
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer.jsx";
 import NavBar from "./components/NavBar/NavBar";
@@ -32,6 +33,7 @@ function App() {
           />
           <Route path="/item/:productId" element={<ItemDetailContainer />} />
           <Route path="/cart" element={<Cart/>}/>
+          <Route path="/checkout" element={<FormBuyer/>}/>
         </Routes>
         <Footer />
       </div>

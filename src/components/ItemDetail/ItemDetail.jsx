@@ -1,22 +1,19 @@
 import React from "react";
 import { useState, useContext } from "react";
-import CartContext from "../../context/CartContext"
+import CartContext from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 
-const ItemDetail = ({id, name, img, category, description, price, stock}) => {
-  const [quantity,setQuantity] = useState(0)
+const ItemDetail = ({ id, name, img, description, price, stock }) => {
+  const [quantity, setQuantity] = useState(0);
 
+  const { addToCart } = useContext(CartContext);
 
-  const { addToCart } = useContext(CartContext)
-
-  const handleOnAdd=(count)=>{
-    alert("se agrego al carrito"+count);
-    console.log("agregue al carrito "+count)
-    setQuantity(count)
-    addToCart({ id, name, price}, count)
-  }
+  const handleOnAdd = (count) => {
+    setQuantity(count);
+    addToCart({ id, name, price, img }, count);
+  };
   return (
     <>
       <div key={id} className="container mt-5">
@@ -34,9 +31,21 @@ const ItemDetail = ({id, name, img, category, description, price, stock}) => {
             <p className="text-right">{description}</p>
             <h5>Stock: {stock}</h5>
             <div className="d-flex justify-content-center">
-            {quantity===0? <ItemCount onAdd={handleOnAdd}/> : <Link to='/cart' className="btn btn-danger bg-gradient me-3 mt-3">Ir al carrito</Link>}
-              
-              
+              {quantity === 0 ? (
+                <ItemCount initial={1} max={stock} onAdd={handleOnAdd} />
+              ) : (
+                <div className="d-flex justify-content-center">
+                   <Link
+                  to="/cart"
+                  className="btn btn-danger bg-gradient me-3 mt-3">
+                  Ir al carrito
+                </Link>
+                <Link to="/">
+                  <button className="btn btn-danger bg-gradient me-3 mt-3">Seguir Comprando</button>
+                </Link>
+                </div>
+               
+              )}
             </div>
           </div>
         </div>
