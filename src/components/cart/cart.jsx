@@ -28,7 +28,7 @@ const Cart = () => {
       </div>
       <div className="d-flex justify-content-center m-2">
       <button className="btn btn-danger bg-gradient m-3" onClick={() => cleaningCart()}> Vaciar Carrito </button>
-      <Link to={"/"}>
+      <Link to={"/checkout"}>
         <button className="btn btn-danger bg-gradient m-3"> Procesar Compra</button>
       </Link>
       </div>
