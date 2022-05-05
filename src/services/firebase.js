@@ -3,12 +3,12 @@ import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
   
-  apiKey: "AIzaSyDU6_Qhc9Kmw1y1iMj5t33Fct2YOohZTQ8",
-  authDomain: "vinylstore-coderhouse.firebaseapp.com",
-  projectId: "vinylstore-coderhouse",
-  storageBucket: "vinylstore-coderhouse.appspot.com",
-  messagingSenderId: "578440717175",
-  appId: "1:578440717175:web:85f78edeff372ff5a1f772"
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId
 };
 
 // Initialize Firebase

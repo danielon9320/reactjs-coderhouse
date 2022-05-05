@@ -1,5 +1,5 @@
 import { css } from '@emotion/react'
-import MoonLoader from 'react-spinners/MoonLoader'
+import PuffLoader from 'react-spinners/PuffLoader'
 import './LoaderSecondary.css'
 
 const LoaderSecondary = () => {
@@ -12,10 +12,10 @@ const LoaderSecondary = () => {
     return (
         <>
             <div className="loaderSecondaryContainerMobile">
-                <MoonLoader color='#dc3545' css={override} size={150} />
+                <PuffLoader color='#dc3545' css={override} size={150} />
             </div>
             <div className="loaderSecondaryContainer">
-                <MoonLoader color='#dc3545' css={override} size={150} />
+                <PuffLoader color='#dc3545' css={override} size={150} />
             </div>
         </>
     )

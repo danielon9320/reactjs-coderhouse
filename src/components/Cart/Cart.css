@@ -15,6 +15,9 @@
   text-decoration: none;
 }
 
+.no-link{
+  text-decoration: none;
+}
 
 /*vista mobile*/
 @media only screen and (min-width:0px) and (max-width:767px) {

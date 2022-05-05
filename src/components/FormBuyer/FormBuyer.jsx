@@ -30,7 +30,7 @@ const FormBuyer = () => {
     });
   };
 
-  const createOrder = (e) => {
+  const createOrder = (e) =>  {
     e.preventDefault();
     setCreatingOrder(true);
     delete formData.emailConfirm;
@@ -58,7 +58,7 @@ const FormBuyer = () => {
         setCreatingOrder(false);
         cleaningCart();
         updateStock();
-        
+
         setFormData({
           name: "",
           email: "",
@@ -67,25 +67,21 @@ const FormBuyer = () => {
         });
       });
 
+    function updateStock() {
+      const batch = writeBatch(firestoreDb);
 
-      function updateStock() {
-            const batch = writeBatch(firestoreDb)
+      order.items.map((el) => {
+        let updateDoc = doc(firestoreDb, "products", el.id);
+        let currentStock = cart.find((item) => item.id === el.id).stock;
 
-            order.items.map( (el) => {
-                let updateDoc = doc(firestoreDb, 'products', el.id)
-                let currentStock = cart.find(item => item.id === el.id).stock
-
-                batch.update( updateDoc, {
-                    stock: currentStock - el.quantity
-                })
-            })
-
-          batch.commit()
-        }
-
-
-
-
+        batch.update(updateDoc, {
+          stock: currentStock - el.quantity,
+        });
+      });
+           batch.commit();
+    }
+    return order.items;
+    
   };
 
   return (
@@ -95,21 +91,18 @@ const FormBuyer = () => {
           <h4 className="mt-5 text-center">
             Procesando su orden, espere un momento...
           </h4>
-           
-          <LoaderSecondary  />
-      
 
+          <LoaderSecondary />
         </>
       ) : orderId ? (
         <div className="container">
           <div className="py-5 text-center mt-5">
             <h2 className="mt-5">¡Gracias por elegirnos!</h2>
-              
+
             <h4 className="my-5">La compra se ha realizado exitosamente.</h4>
             <strong>El ID de tu compra es {orderId}</strong>
             <br />
-            <Link className="btn btn-danger bg-gradient mt-5" to={`/`} >
-              
+            <Link className="btn btn-danger bg-gradient mt-5" to={`/`}>
               <strong>Volver al inicio</strong>
             </Link>
           </div>
@@ -132,7 +125,8 @@ const FormBuyer = () => {
                         type="name"
                         className="form-control form-control--color"
                         name="name"
-                        placeholder="Ingresa tu nombre" defaultValue={formData.name}
+                        placeholder="Ingresa tu nombre"
+                        defaultValue={formData.name}
                         required
                       />
                     </div>
@@ -142,7 +136,8 @@ const FormBuyer = () => {
                         type="name"
                         className="form-control form-control--color"
                         name="phone"
-                        placeholder="381-4621184" defaultValue={formData.phone}
+                        placeholder="381-4621184"
+                        defaultValue={formData.phone}
                         required
                       />
                     </div>
@@ -152,7 +147,8 @@ const FormBuyer = () => {
                         type="name"
                         className="form-control form-control--color"
                         name="email"
-                        placeholder="ejemplo@gmail.com" defaultValue={formData.email}
+                        placeholder="ejemplo@gmail.com"
+                        defaultValue={formData.email}
                         required
                       />
                     </div>
@@ -162,11 +158,21 @@ const FormBuyer = () => {
                         type="name"
                         className="form-control form-control--color"
                         name="emailConfirm"
-                        placeholder="ejemplo@gmail.com" defaultValue={formData.emailConfirm}
+                        placeholder="ejemplo@gmail.com"
+                        defaultValue={formData.emailConfirm}
                         required
                       />
                     </div>
-                    <button className="btn btn-danger bg-gradient d-flex justify-content-center w-50 align-self-center" disabled={!formData.name || !formData.phone || !formData.email || formData.email !== formData.emailConfirm || cart.length === 0} >
+                    <button
+                      className="btn btn-danger bg-gradient d-flex justify-content-center w-50 align-self-center"
+                      disabled={
+                        !formData.name ||
+                        !formData.phone ||
+                        !formData.email ||
+                        formData.email !== formData.emailConfirm ||
+                        cart.length === 0
+                      }
+                    >
                       {" "}
                       Comprar
                     </button>
