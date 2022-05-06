@@ -80,7 +80,7 @@ const FormBuyer = () => {
       });
            batch.commit();
     }
-    return order.items;
+    
     
   };
 
