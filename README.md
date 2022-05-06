@@ -11,6 +11,7 @@ Se implementaron las siguientes dependencias React-router-dom para la navegacion
 ![image](https://github.com/danielon9320/reactjs-coderhouse/blob/master/1.gif)
 ![image](https://github.com/danielon9320/reactjs-coderhouse/blob/master/2.gif)
 ![image](https://github.com/danielon9320/reactjs-coderhouse/blob/master/3.gif)
+![image](https://github.com/danielon9320/reactjs-coderhouse/blob/master/4.gif)
 
 # Para poder usar el proyecto
 
