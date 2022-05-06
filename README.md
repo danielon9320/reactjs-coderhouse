@@ -8,8 +8,9 @@ Este es el primer avance proyecto final del curso dictado por [CoderHouse](https
 Se trata sobre una Ecommerce con la tematica de tienda de musica en diferentes formatos, la cual está creado con Create-React-App.
 Se implementaron las siguientes dependencias React-router-dom para la navegacion, Bootstrap para el modelado de la interfaz, React-Spinner para los spinner animados, React-Icons para los iconos utilizados, Firebase para la persistencia de datos.
 ### Imagenes del proyecto:
-![image](https://github.com/danielon9320/reactjs-coderhouse/blob/primer-entrega-proyectoFinal/GIF%206-4-2022%2016-09-00.gif)
-![image](https://github.com/danielon9320/reactjs-coderhouse/blob/primer-entrega-proyectoFinal/GIF%206-4-2022%2016-18-06.gif)
+![image](https://github.com/danielon9320/reactjs-coderhouse/blob/master/1.gif)
+![image](https://github.com/danielon9320/reactjs-coderhouse/blob/master/2.gif)
+![image](https://github.com/danielon9320/reactjs-coderhouse/blob/master/3.gif)
 
 # Para poder usar el proyecto
 
